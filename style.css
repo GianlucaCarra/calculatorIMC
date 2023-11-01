@@ -109,6 +109,7 @@ form button, input {
   height: 5.2rem;
   padding: 1.6rem;
 }
+
 form button {
   display: flex;
   gap: .8rem;
@@ -117,6 +118,7 @@ form button {
   border: none;
   justify-content: center;
   width: 100%;
+  border-radius: 0.4rem;
 
   color: var(--text-base-color);
   text-align: center;
@@ -124,7 +126,6 @@ form button {
   font-weight: 700;
   line-height: 2rem;
 }
-
 
 /* Modal */ 
 
