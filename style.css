@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 62.5%;
+
+  --bg-body: hsl(231, 80%, 8%);
+  --bg-card: hsl(0, 0%, 100%);
+  --bg-button: hsl(194, 97%, 31%);
+  --bg-error: hsl(0, 86%, 59%);
+  --bg-input: hsl(212, 23%, 89%);
+  --bg-body-modal: hsla(0, 0%, 0%, 0.7);
+
+  --headline-color: hsl(194, 68%, 15%);
+  --lable-color: hsl(170, 100%, 14%);
+  --input-color: hsl(210, 11%, 15%);
+  --placeholder-color: hsla(210, 9%, 31%, .5);
+  --text-base-color: var(--bg-card);
+
+  --outline-focus: var(--bg-button);
+  --outline: hsla(210, 9%, 31%, 0.3);
+  
+}
+
+body {
+  background-color: var(--bg-body);
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  background-color: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  border-radius: .6rem;
+  padding: 4.8rem 6.4rem 6.4rem;
+  max-width: 42.8rem;
+  margin-inline: auto;
+  box-shadow: 0 .2rem .4rem 0 rgba(0, 0, 0, 0.10);
+}
+
+/* IMC Calc */
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 30rem;
+  margin-bottom: 3.2rem;
+}
+
+.title {
+  color: var(--headline-color);
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 4rem;
+}
+
+legend {
+  margin-bottom: 3.2rem;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+
+label {
+  color: var(--lable-color);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+}
+
+input {
+  border: .1rem solid var(--outline);
+  border-radius: .4rem;
+  background-color: var(--bg-input);
+
+  color: var(--input-color);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2rem;
+}
+
+input::placeholder {
+  color: var(--placeholder-color);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2rem;
+}
+
+form input:focus {
+  outline: 2px solid var(--outline-focus);
+}
+
+form button, input {
+  height: 5.2rem;
+  padding: 1.6rem;
+}
+form button {
+  display: flex;
+  gap: .8rem;
+  align-items: center;
+  background-color: var(--bg-button);
+  border: none;
+  justify-content: center;
+  width: 100%;
+
+  color: var(--text-base-color);
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+
+/* Modal */ 
+
+.modal-wrapper.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-wrapper {
+  position: absolute;
+  inset: 0;
+  background-color: var(--bg-body-modal);
+  display: grid;
+  place-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal {
+  position: relative;
+}
+
+.modal button {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+
+  cursor: pointer;
+  transition: tranform .3s;
+}
+
+.modal button:hover {
+  transform: scale(1.1);
+}
+
+/* Alert error */
+
+
+.alert-error.open {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.alert-error {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: .8rem 0;
+  background-color: var(--bg-error);
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: transform .3s;
+}
+
+.alert-error p {
+  color: #FFF;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  text-align: center;
+}
